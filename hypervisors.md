@@ -60,6 +60,34 @@ Instances can be created by clicking `Create VM` at the top right of the window.
 
 The instance will be created as off. Please turn on, load up the console and walk through the OS setup process.
 
+Adding Storage to an Instance
+------------------------------
+
+As instances have been created with LVM-backed disks, storage can be extended arbitrarily for any instance. The safest way to do this is via the process dictated here.
+
+  * Begin in proxmox by selecting a virtual machine and clicking the "hardware" tab.
+  * On the hardware tab, click "Add" and select "Hard Disk".
+    * Use VIRTIO as the driver (it should autoincrement the device num, but take note of it, we'll need it later)
+    * Use "local" for storage unless you have a good reason (you don't).
+    * Select your disk size and click "Add".
+  * When performing these actions on proxmox 3.3 and ubuntu 12.04, not even rebooting the instance was enough, I needed to power off an back on the instance. ugh.
+  * After the disk is available in the instance, perform these actions to extend the lv:
+    * `fdisk /dev/vdb` "b" here is the device num from above as alpha.
+    * After each prompt in the fdisk util type the code here and then hit enter:
+      * `n`
+      * `<enter>` (default: p)
+      * `<enter>` (default: 1)
+      * `<enter>` (default: First cylinder)
+      * `<enter>` (default: Last cylinder)
+      * `t`
+      * `8e` (for Linux LVM)
+      * `w` (writes changes and exits)
+    * `pvcreate /dev/vdb1` will make the disk available for use in LVM
+    * `vgdisplay` will look up the volume group we need to add it to (ex: `lausd`)
+    * `vgextend lausd /dev/vdb1` adds our disk to the volume group
+    * `lvdisplay` will look up the logical volume we want to add it to (ex: `/dev/lausd/root`)
+    * `lvextend /dev/lausd/root /dev/vdb1` extends the lv to include our new disk.
+    * `resize2fs /dev/lausd/root` will finally extend our partition for usage. check `df` to confirm!
 
 Reviewing Instance Backup Policy
 ---------------------------------
