@@ -10,5 +10,6 @@
 
 [Mobilize]()
 
+  * [ohmage](mz-ohmage.md)
   * [Issue Tracker](mz-issue-tracker.md)
   * [RStudio](mz-rstudio.md)
