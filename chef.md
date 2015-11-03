@@ -8,17 +8,17 @@ Cookbooks
 
 Since I started learning/doing chef in late 2014, most/all of the cookbook interaction on our chef server is done via [wrapper cookbooks](https://www.chef.io/blog/2013/12/03/doing-wrapper-cookbooks-right/). Community cookbooks are used to interface with package creation/configuration/management, and wrapped inside simple `cens-` cookbooks where defaults are overwritten/managed and community recipes are chained together to actually create our infrastructure as it exists. Below is a list of the cookbooks currently in use and a brief description of how they are being used
 
-  * [cens-base](https://github.com/stevenolen/chef-cens-base)
+  * [cens-base](https://github.com/mobilizingcs-ops/chef-cens-base)
     * Sets up some basics on all nodes: installs `emacs`, `vim`, `curl`, `openssh`, `ntp`, `htop`, `nfs-client`, `chef-client service`, configures these and sets the timezone to `US/Pacific`.
-  * [cens-monitor](https://github.com/stevenolen/chef-cens-monitor)
+  * [cens-monitor](https://github.com/mobilizingcs-ops/chef-cens-monitor)
     * `[master, master-graphite, master-grafana]` recipes configure a server to act as the sensu server, as well as collecting/visualizing metric data sent from sensu metric checks by the clients
     * The additional recipes configure/set up checks on clients: `base_checks` can be used on all nodes, `ohmage_checks` on those running ohmage, `raid_checks` on physical nodes with raid arrays, `mysql_checks` on servers running mysql, etc.
-  * [cens-backup](https://github.com/stevenolen/chef-cens-backup)
+  * [cens-backup](https://github.com/mobilizingcs-ops/chef-cens-backup)
     * `[server, server-dup]` recipes set up the ZFS storage servers NFS shares needed for servers to back up to, and a nightly sync of important data from the main server to the dup.
     * Additional recipes configure/set up backup models (see [ruby backup gem](http://meskyanichi.github.io/backup/v4/)) for running services: `[ohmage, rstudio, jenkins, generic web server, request-tracker4]`
-  * [cens-dhcp](https://github.com/stevenolen/chef-cens-dhcp)
+  * [cens-dhcp](https://github.com/mobilizingcs-ops/chef-cens-dhcp)
     * Configures a server to handle dhcp requests for the CENS domain.
-  * [cens-unifi](https://github.com/stevenolen/chef-cens-unifi)
+  * [cens-unifi](https://github.com/mobilizingcs-ops/chef-cens-unifi)
     * Configures a server to act as the server for the Unifi AP in the Lab.
 
 Run Lists
