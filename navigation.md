@@ -1,4 +1,4 @@
-# MobilizingCS Ops Documentation
+# Mobilize Ops Documentation
 
 [Physical Servers](physical.md)
 [Hypervisors/Proxmox](hypervisors.md)
