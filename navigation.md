@@ -8,6 +8,7 @@
   * [LDAP](ldap.md)
   * [CI/CD (Jenkins)](ci.md)
   * [Monitoring/Alerting](sensu.md)
+  * [Analytics](analytics.md)
   * [CENS WiFi](wifi.md)
 
 [Mobilize]()
