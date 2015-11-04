@@ -1,4 +1,4 @@
-# CENS/Mobilize/ohmage Documentation
+# MobilizingCS Ops Documentation
 
 [Physical Servers](physical.md)
 [Hypervisors/Proxmox](hypervisors.md)
@@ -7,6 +7,7 @@
 
   * [LDAP](ldap.md)
   * [CI/CD (Jenkins)](ci.md)
+  * [Monitoring/Alerting](sensu.md)
   * [CENS WiFi](wifi.md)
 
 [Mobilize]()

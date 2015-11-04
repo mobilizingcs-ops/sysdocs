@@ -1,4 +1,4 @@
-CENS/Mobilize admin docs
+MobilizingCS Ops docs
 =======
 
-Some documentation to give an idea to someone who isn't Steve
+This is documentation that serves as helpers and configuration info for the infrastructure and tools used by  the CENS/Mobilize/ohmage projects.
