@@ -6,6 +6,7 @@
 [Services]()
 
   * [LDAP](ldap.md)
+  * [CI/CD (Jenkins)](ci.md)
   * [CENS WiFi](wifi.md)
 
 [Mobilize]()
