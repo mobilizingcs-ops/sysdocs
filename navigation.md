@@ -9,6 +9,7 @@
   * [CI/CD (Jenkins)](ci.md)
   * [Monitoring/Alerting](sensu.md)
   * [Analytics](analytics.md)
+  * [Backups](backups.md)
   * [CENS WiFi](wifi.md)
 
 [Mobilize]()
