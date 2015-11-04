@@ -12,9 +12,11 @@
   * [Backups](backups.md)
   * [CENS WiFi](wifi.md)
 
-[Mobilize]()
+[Mobilize](mobilize.md)
 
   * [ohmage](mz-ohmage.md)
   * [Issue Tracker](mz-issue-tracker.md)
   * [RStudio](mz-rstudio.md)
   * [Dropbox/owncloud](mz-owncloud.md)
+  * [Wiki](mz-wiki.md)
+  * [opencpu](mz-ocpu.md)
