@@ -1,5 +1,4 @@
-MDwiki
+Mobilize Documentation
 ======
 
-See http://www.mdwiki.info/ for more documentation and details.
-# sysdocs
+Check out http://mobilizingcs-ops.github.io/sysdocs
