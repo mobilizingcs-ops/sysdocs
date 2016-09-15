@@ -8,10 +8,8 @@ Our infrastructure is quite virtualized and we're using Proxmox to create/mainta
 
   * `athena.ohmage.org`
   * `boomer.ohmage.org`
-  * `doral.ohmage.org`
-  * `eight.ohmage.org`
 
-These hosts server the Proxmox web ui from port 8006 and https (in order to visit one, have a CENS-based IP address and visit https://doral.ohmage.org:8006/). The web ui is served from all nodes, and thus in the event of a node failure, can be accessed from a live node.
+These hosts server the Proxmox web ui from port 8006 and https (in order to visit one, have a CENS-based IP address and visit https://athena.ohmage.org:8006/). The web ui is served from all nodes, and thus in the event of a node failure, can be accessed from a live node.
 
 Log in
 ----------
