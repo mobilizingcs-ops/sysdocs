@@ -1,7 +1,26 @@
 Backups/Network Storage
 =======
 
-A complex-ly simple affair.
+Restore from Proxmox Legacy `.vma` backups
+-------------------------------------------
+
+Proxmox (our historical kvm solution) has a proprietary archive format for their virtual machine backups.  While our legacy vm data should exist on our backup server or on s3, there may come a time when the legacy archives are need (to reference conf files, or "how we did things way back when."). The process to restore a backup is a bit lengthy, but here's how it goes.
+
+  * Copy the `vzdump-qemu-*.vma  file you need from `/tank/archive/vms` on `stor` to a docker host.
+  * Run a container mounting the directory with the `.vma` to `/images`: docker run --rm -t -i -v /path/to/vma/:/images akaihola/vma /bin/bash
+  * Extract the vma in the container: `vma extract vzdump-qemu-*.vmz`
+  * outside of the container, you'll need to mount the raw disks, have their vgs picked up and activated:
+    * `losetup /dev/loop0 disk-drive-virtio0.raw` (for every raw disk, enumerating `loopX`)
+    * `kpartx -a /dev/loop0` (for every raw disk, enumerating `loopX`)
+    * `vgscan` and then activate the newly found vg (`lausd` in this example): `vgchange -ay lausd`
+    * mount the lg you need: `mount /dev/mapper/lausd-root /mnt/loop`
+    * use the fs as needed at `/mnt/loop`
+    * when you're done, unmount: `umount /mnt/loop`, deactivate: `vgchange -an lausd`, and delete the partitions: `kpartx -d /dev/loop0` (for each `loopX` created above)
+    * `vgscan` and `df` to confirm they are gone and then delete the `.raw` files to clean up!
+
+
+Below is legacy, legacy and more legacy
+
 
 Setup
 ----------
