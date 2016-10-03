@@ -25,6 +25,7 @@ S3 Backups
 -----------
 
 Once a week, the tarred backups found in "Local Backups" are replicated to s3 using a [simple docker container](https://github.com/stevenolen/encrypt-and-s3-docker). This container requires that you pass AWS creds as well as mount the volume you'd like encrypted/replicated at `/backup` and an openssl public key mounted at `/key.pub`. The container will, for each file (that match a given regex, default: `*`) within the `/backup` directory:
+
   * generate a random password to use for symmetric encryption of the file
   * encrypt the file using the generated random password
   * encrypt the random password using `/key.pub`
