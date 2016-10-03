@@ -5,6 +5,7 @@
 
   * [Docker](docker.md)
   * [mobilize-in-a-box](mz-in-a-box.md)
+  * [Backups](backups.md)
 
 [Mobilize](mobilize.md)
 
@@ -19,7 +20,6 @@
   * [CI/CD (Jenkins)](ci.md)
   * [Monitoring/Alerting](sensu.md)
   * [Analytics](analytics.md)
-  * [Backups](backups.md)
   * [CENS WiFi](wifi.md)
   * [Chef](chef.md)
   * [Hypervisors/Proxmox](hypervisors.md)
