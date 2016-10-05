@@ -1,7 +1,13 @@
 Physical Servers
 =======
 
-The physical servers are transitioning to a new home, and many/most are going away. These instructions will be updated when the transition is complete.
+The physical servers are now located at 213 GSEIS. Left-most rack. Chat with Marco or Hector for access.
+
+Remote Access
+-------------
+
+Remote access to these servers is done via the GSEIS VPN.
+
 
 Stack Order
 -----------

@@ -13,15 +13,3 @@
   * [RStudio](mz-rstudio.md)
   * [Wiki](mz-wiki.md)
   * [opencpu](mz-ocpu.md)
-
-[Legacy]()
-
-  * [LDAP](ldap.md)
-  * [CI/CD (Jenkins)](ci.md)
-  * [Monitoring/Alerting](sensu.md)
-  * [Analytics](analytics.md)
-  * [CENS WiFi](wifi.md)
-  * [Chef](chef.md)
-  * [Hypervisors/Proxmox](hypervisors.md)
-  * [Issue Tracker](mz-issue-tracker.md)
-  * [Dropbox/owncloud](mz-owncloud.md)

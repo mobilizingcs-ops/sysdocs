@@ -8,7 +8,7 @@ The `docker-compose` environments on a.mobilizingcs.org are backed up nightly to
 
 The current version of this script can be found at `a.mobilizingcs.org:/root/bin/backup.sh`, but here's a basic copy:
 
-```sh
+```
 #!/bin/bash
 
 # array of containers to back up
@@ -20,7 +20,6 @@ do
   docker run --rm --volumes-from $i -v /mnt/backup:/backup boombatower/docker-backup backup "$i.tar.xz"
 done
 ```
-
 S3 Backups
 -----------
 
@@ -40,7 +39,7 @@ ZFS datasets on stor.mobilizingcs.org
 
 stor.mobilizingcs.org runs FreeBSD 10, and makes use of ZFS for data storage and integrity. 
 
-```sh
+```
 [root@stor ~]# zfs list
 NAME           USED  AVAIL  REFER  MOUNTPOINT
 rpool         6.68G  47.1G    96K  /rpool
